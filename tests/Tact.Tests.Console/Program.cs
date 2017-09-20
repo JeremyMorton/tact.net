@@ -22,13 +22,13 @@ namespace Tact.Tests.Console
         public static void Main(string[] args)
         {
             Thread.Sleep(1000);
-            
+
             Demo();
             RunTests();
 
             Thread.Sleep(1000);
         }
-        
+
         private static void Demo()
         {
             var expectedThings = new List<int> {1, 2};
@@ -73,7 +73,7 @@ namespace Tact.Tests.Console
             container.ConfigureByAttribute(config, assembly);
             container.RegisterByAttribute(assembly);
             container.InitializeByAttribute(assembly);
-            
+
             Assert.Equal(11, logger.Logs.Count);
 
             return container;
@@ -157,10 +157,13 @@ namespace Tact.Tests.Console
             new EfficientInvokerTests(testOutputHelper2).MethodComparison();
 
             var testOutputHelper3 = new TestOutputHelper();
-            new EfficientInvokerTests(testOutputHelper3).PropertyComparison();
+            new EfficientInvokerTests(testOutputHelper3).AsyncMethodComparison();
 
             var testOutputHelper4 = new TestOutputHelper();
-            new EfficientInvokerTests(testOutputHelper4).InvokeAsync().Wait();
+            new EfficientInvokerTests(testOutputHelper4).PropertyComparison();
+
+            var testOutputHelper5 = new TestOutputHelper();
+            new EfficientInvokerTests(testOutputHelper5).InvokeAsync().Wait();
 
             System.Console.WriteLine("...Complete");
         }

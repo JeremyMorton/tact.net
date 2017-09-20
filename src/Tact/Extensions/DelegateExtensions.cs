@@ -9,5 +9,10 @@ namespace Tact
         {
             return EfficientInvoker.ForDelegate(del);
         }
+
+        public static EfficientInvoker2 GetInvoker2(this Delegate del)
+        {
+            return EfficientInvoker2.ForDelegate(del);
+        }
     }
 }

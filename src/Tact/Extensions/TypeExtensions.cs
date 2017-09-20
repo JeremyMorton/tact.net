@@ -43,6 +43,7 @@ namespace Tact
                     throw new ArgumentOutOfRangeException();
             }
         }
+
         public static EfficientInvoker GetMethodInvoker(this Type type, string methodName)
         {
             return EfficientInvoker.ForMethod(type, methodName);
@@ -51,6 +52,16 @@ namespace Tact
         public static EfficientInvoker GetPropertyInvoker(this Type type, string propertyName)
         {
             return EfficientInvoker.ForProperty(type, propertyName);
+        }
+
+        public static EfficientInvoker2 GetMethodInvoker2(this Type type, string methodName)
+        {
+            return EfficientInvoker2.ForMethod(type, methodName);
+        }
+
+        public static EfficientInvoker2 GetPropertyInvoker2(this Type type, string propertyName)
+        {
+            return EfficientInvoker2.ForProperty(type, propertyName);
         }
 
         private enum Result

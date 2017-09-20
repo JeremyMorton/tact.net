@@ -1,6 +1,5 @@
 {
   "version": "1.0.0-*",
-
   "dependencies": {
     "Microsoft.Extensions.Configuration": "1.0.0",
     "Microsoft.Extensions.Configuration.Binder": "1.0.0",
@@ -8,10 +7,12 @@
     "System.ComponentModel.Annotations": "4.1.0",
     "Tact": "1.0.0-*"
   },
-
   "frameworks": {
     "netstandard1.6": {
       "imports": "dnxcore50"
     }
+  },
+  "buildOptions": {
+    "optimize": true
   }
 }

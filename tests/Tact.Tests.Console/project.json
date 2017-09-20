@@ -2,7 +2,8 @@
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true,
-    "copyToOutput": ["AppSettings.json"]
+    "copyToOutput": [ "AppSettings.json" ],
+    "optimize": true
   },
 
   "dependencies": {
